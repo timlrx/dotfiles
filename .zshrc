@@ -46,16 +46,10 @@ alias gpull='git pull'
 alias gco='git checkout'
 alias gcm='git commit -m'
 alias gl='git log --oneline --graph --all --decorate'
-alias gll='log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]%Creset" --decorate --date=short'
-
-# type sublime . to open current folder in Sublime Text
-alias sublime="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl --new-window $@"
+alias gll='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]%Creset" --decorate --date=short'
 
 # load zsh-completions
 autoload -U compinit && compinit
-
-# use starship theme (needs to be at the end)
-eval "$(starship init zsh)"
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -65,21 +59,15 @@ eval "$(pyenv init -)"
 # Fnm
 eval "$(fnm env --use-on-cd)"
 
-# Powerline
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-source /Users/timlrx/.pyenv/versions/3.11.4/lib/python3.11/site-packages
-
 # bun completions
-[ -s "/Users/timlrx/.bun/_bun" ] && source "/Users/timlrx/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # poetry
-export PATH="/Users/timlrx/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Use radian as default r terminal
 alias r="radian"
@@ -99,14 +87,16 @@ alias run_jaeger='docker run -d --rm --name jaeger \
   -p 9411:9411 \
   jaegertracing/all-in-one && echo "Jaeger UI service is running at http://localhost:16686"'
 
-
 # pnpm
-export PNPM_HOME="/Users/timlrx/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 
+# dotfiles config alias
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
+# use starship theme (needs to be at the end)
+eval "$(starship init zsh)"

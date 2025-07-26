@@ -98,5 +98,9 @@ esac
 # dotfiles config alias
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
+# claude code
+alias claude="/Users/timlrx/.claude/local/claude"
+
 # use starship theme (needs to be at the end)
 eval "$(starship init zsh)"
+

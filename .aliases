@@ -1,0 +1,25 @@
+alias ip="ipconfig getifaddr en0"
+alias zshconfig="vim ~/.zshrc"
+alias zshsource="source ~/.zshrc"
+alias ohmyzsh="cd ~/.oh-my-zsh"
+alias sshhome="cd ~/.ssh"
+alias sshconfig="vim ~/.ssh/config"
+alias gitconfig="vim ~/.gitconfig"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias c='clear'
+alias gs='git status'
+alias ga='git add'
+alias gpush='git push'
+alias gpull='git pull'
+alias gco='git checkout'
+alias gcm='git commit -m'
+alias gl='git log --oneline --graph --all --decorate'
+alias gll='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]%Creset" --decorate --date=short'
+alias r="radian"
+alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias claude="/Users/timlrx/.claude/local/claude"

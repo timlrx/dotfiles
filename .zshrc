@@ -14,42 +14,11 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 export ZSH="$HOME/.oh-my-zsh"
 source "$ZSH/oh-my-zsh.sh"
 
-# get machine's ip address
-alias ip="ipconfig getifaddr en0"
-
-# edit global zsh configuration
-alias zshconfig="vim ~/.zshrc"
-# reload zsh configuration
-alias zshsource="source ~/.zshrc"
-# reload zsh configuration
-alias ohmyzsh="cd ~/.oh-my-zsh"
-
-# navigate to global ssh directory
-alias sshhome="cd ~/.ssh"
-alias sshconfig="vim ~/.ssh/config"
-alias gitconfig="vim ~/.gitconfig"
-
-# Navigation aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias c='clear'
-
-# Git aliases
-alias gs='git status'
-alias ga='git add'
-alias gpush='git push'
-alias gpull='git pull'
-alias gco='git checkout'
-alias gcm='git commit -m'
-alias gl='git log --oneline --graph --all --decorate'
-alias gll='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]%Creset" --decorate --date=short'
-
 # load zsh-completions
 autoload -U compinit && compinit
+
+# Aliases
+[ -f ~/.aliases ] && source ~/.aliases
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -68,9 +37,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # poetry
 export PATH="$HOME/.local/bin:$PATH"
-
-# Use radian as default r terminal
-alias r="radian"
 
 # Run jaeger
 alias run_jaeger='docker run -d --rm --name jaeger \
@@ -95,11 +61,14 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# dotfiles config alias
-alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
-
-# claude code
-alias claude="/Users/timlrx/.claude/local/claude"
+# Remote sync
+sync-remote() {
+    if [ $# -eq 0 ]; then
+        echo "Usage: sync-remote <hostname>"
+        return 1
+    fi
+    rsync -av ~/.aliases "$1":~/.bash_aliases
+}
 
 # use starship theme (needs to be at the end)
 eval "$(starship init zsh)"

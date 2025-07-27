@@ -42,24 +42,24 @@ palette = 'one_dark'
 
 # Sets the colors of the "one_dark" palette.
 [palettes.one_dark]
-mono0 = '#d7dae0' # terminal white, from the One Dark Pro VSCode theme.
-mono1 = '#abb2bf' # syntax_fg.
-mono2 = '#828997'
-mono3 = '#5c6370'
-mono4 = '#3f4451' # terminal black, from the One Dark Pro VSCode theme.
-color_red0 = '#e06c75'
-color_red1 = '#be5046'
-color_green = '#98c379'
-color_yellow = '#e5c07b'
-color_blue = '#61afef'
-color_purple = '#c678dd'
-color_cyan = '#56b6c2'
-color_orange = '#d19a66'
-syntax_fg = '#abb2bf'
-syntax_bg = '#282c34'
-color_bg2 = '#665c54'
-syntax_gutter = '#647382'
-syntax_accent = '#528cff'
+mono0 = '#dce0e5' # terminal white, matches Zed's terminal.ansi.white
+mono1 = '#acb2be' # syntax_fg, matches Zed's editor.foreground
+mono2 = '#a9afbc' # matches Zed's text.muted
+mono3 = '#5d636f' # matches Zed's syntax comment color
+mono4 = '#282c33' # terminal black, matches Zed's terminal.ansi.black
+color_red0 = '#d07277' # matches Zed's syntax property and terminal red
+color_red1 = '#be5046' # matches Zed's syntax punctuation.special
+color_green = '#a1c181' # matches Zed's syntax string color
+color_yellow = '#dec184' # matches Zed's syntax constant color (note: dfc184 in syntax)
+color_blue = '#74ade8' # matches Zed's syntax attribute and text.accent
+color_purple = '#b477cf' # matches Zed's syntax keyword color
+color_cyan = '#6eb4bf' # matches Zed's syntax operator and type color
+color_orange = '#bf956a' # matches Zed's syntax boolean and number color
+syntax_fg = '#acb2be' # matches Zed's editor.foreground
+syntax_bg = '#282c33' # matches Zed's editor.background
+color_bg2 = '#2f343e' # matches Zed's elevated_surface.background
+syntax_gutter = '#4e5a5f' # matches Zed's editor.line_number
+syntax_accent = '#74ade8' # matches Zed's text.accent
 
 # Module that displays the current OS.
 [os]

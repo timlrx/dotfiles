@@ -5,9 +5,12 @@
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  tmux
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-fzf-history-search
+  you-should-use
 )
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src

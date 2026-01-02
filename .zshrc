@@ -41,6 +41,9 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # poetry
 export PATH="$HOME/.local/bin:$PATH"
 
+# tailscale alias
+alias tailscale='/Applications/Tailscale.app/Contents/MacOS/Tailscale'
+
 # Run jaeger
 alias run_jaeger='docker run -d --rm --name jaeger \
   -e COLLECTOR_ZIPKIN_HOST_PORT=:9411 \

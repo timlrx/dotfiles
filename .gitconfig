@@ -3,6 +3,7 @@
 [user]
 	name = Timothy Lin
 	email = timothy0336@hotmail.com
+	signingkey = C1BD7FDB89BCB443
 [push]
 	autoSetupRemote = true
 [filter "lfs"]
@@ -10,3 +11,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[commit]
+	gpgsign = true

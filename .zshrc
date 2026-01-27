@@ -23,10 +23,8 @@ autoload -U compinit && compinit
 # Aliases
 [ -f ~/.aliases ] && source ~/.aliases
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# uv
+eval "$(uv generate-shell-completion zsh)"
 
 # Fnm
 eval "$(fnm env --use-on-cd)"
@@ -78,4 +76,3 @@ sync-remote() {
 
 # use starship theme (needs to be at the end)
 eval "$(starship init zsh)"
-

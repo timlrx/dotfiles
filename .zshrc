@@ -29,6 +29,9 @@ eval "$(uv generate-shell-completion zsh)"
 # Fnm
 eval "$(fnm env --use-on-cd)"
 
+# fzf
+eval "$(fzf --zsh)"
+
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 

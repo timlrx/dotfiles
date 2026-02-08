@@ -3,22 +3,27 @@
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+zmodload zsh/zprof
+
+export ZSH="$HOME/.oh-my-zsh"
+
+DISABLE_AUTO_UPDATE="true"
+DISABLE_MAGIC_FUNCTIONS="true"
+ZSH_DISABLE_COMPFIX="true"
+
+# Add custom completions to fpath BEFORE compinit
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
 plugins=(
   git
   tmux
   zsh-completions
   zsh-autosuggestions
-  zsh-syntax-highlighting
-  zsh-fzf-history-search
   you-should-use
+  zsh-syntax-highlighting
 )
 
-fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
-export ZSH="$HOME/.oh-my-zsh"
 source "$ZSH/oh-my-zsh.sh"
-
-# load zsh-completions
-autoload -U compinit && compinit
 
 # Aliases
 [ -f ~/.aliases ] && source ~/.aliases

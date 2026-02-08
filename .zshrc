@@ -3,8 +3,6 @@
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-zmodload zsh/zprof
-
 export ZSH="$HOME/.oh-my-zsh"
 
 DISABLE_AUTO_UPDATE="true"
